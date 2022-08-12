@@ -3,16 +3,16 @@ package com.example.demo.entities;
 
 import org.springframework.util.StringUtils;
 
-import javax.persistence.Id;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 public class Employee {
 
-    private @Id
-    @GeneratedValue Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Long id;
     private String name;
 
     private String firstName;
